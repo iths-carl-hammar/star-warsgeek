@@ -1,0 +1,10 @@
+.species{
+    display: none;
+}
+
+.box{
+    height: 500px;
+    width: 500px;
+    background-color: rgb(206, 154, 154);
+    border-radius: 2px solid black ;
+}
