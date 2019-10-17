@@ -5,6 +5,12 @@
 .box{
     height: 500px;
     width: 500px;
-    background-color: rgb(206, 154, 154);
+    background-color: rgb(226, 217, 217);
     border-radius: 2px solid black ;
+}
+.h1{
+    color: darkorange;
+}
+.people{
+    
 }

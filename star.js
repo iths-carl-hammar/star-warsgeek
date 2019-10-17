@@ -26,7 +26,7 @@ async function render(){
     
     // store the <ul> tag
     let ul = document.querySelector("ul")
-    let h1 = document.querySelector(".h1")
+   
     
     // store the <li> class"spicese"> tag
     let itemPrototype = document.querySelector("li.species")
@@ -37,7 +37,7 @@ async function render(){
         let newItem = itemPrototype.cloneNode(true)
         
         newItem.classList.remove("species")
-        newItem.setAttribute("planet",item.homeworld) //
+        newItem.setAttribute("planet",item.homeworld) // länken som vissas url på sidan
         
         newItem.addEventListener("click",async function(){
             document.body.querySelector(".text").innerText = item.homeworld;
