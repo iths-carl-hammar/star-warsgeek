@@ -1,9 +1,15 @@
 
 
-
-async function getPlanet(url){
+async function getSpaceship(url){
     let response = await fetch(url)
     let body = await response.json(url)
+    return body.model
+}
+
+
+async function getPlanet(url){
+    let response = await fetch(url) // End points 
+    let body = await response.json(url) 
     return body.name
 }
 
@@ -42,9 +48,10 @@ async function render(){
         newItem.addEventListener("click",async function(){
             document.body.querySelector(".text").innerText = item.homeworld;
             let list1 = await getPlanet( item.homeworld)
-            
-            
             document.body.querySelector(".h1").innerText = list1 ;
+            let list2 = await getSpaceship(item.starships)
+            document.body.querySelector(".h2").innerText = list2;
+           
             
             
             
