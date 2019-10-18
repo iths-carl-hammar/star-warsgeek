@@ -1,4 +1,13 @@
 
+async function getPictures(){
+    let  bild = 'https://source.unsplash.com/random/api'
+    let response = await fetch(bild)
+    let body = await response.json(bild)
+   return body.user
+    
+}
+let post =  await getPictures()
+
 
 async function getSpaceship(url){
     let response = await fetch(url)
@@ -19,6 +28,8 @@ async function getData(){
     let  url = 'https://swapi.co/api/people/'
     let response = await fetch( url )
     
+    
+    
     // convert and wait for data to be convert to json.
     let responseBody = await response.json()
     // return the array of users
@@ -32,10 +43,10 @@ async function render(){
     
     // store the <ul> tag
     let ul = document.querySelector("ul")
-   
+    
     
     // store the <li> class"spicese"> tag
-    let itemPrototype = document.querySelector("li.species")
+    let itemPrototype = document.querySelector("li.species") // min display none lista
     // itearte over each user
     for(let item of list){
         
@@ -51,44 +62,36 @@ async function render(){
             document.body.querySelector(".h1").innerText = list1 ;
             let list2 = await getSpaceship(item.starships)
             document.body.querySelector(".h2").innerText = list2  + "  . Ready to shoot you down with my space ship Luke even though you are my son. just kidding ";
-           
-            
-            
-            
-            
-            
-            
-            
             
             
             
         })
-        
-        
-        
-        // change
-        
-        //let h1 = name.querySelector("h1")
-        // h1.append(name)
-        // h1.innerText = homeworld.item
         let p = newItem.querySelector("p")
         p.innerText = item.name
         
         ul.append(newItem)
-        // h1.append(newItem
-        //let input = document.querySelector(".text");
-        //input.addEventListener("click", function(){
-        //  document.body.querySelector(".planets").textContent +=  input +"hello man ";
-        // p.innerText = item 
-        // let section = document.querySelector("section")
-        //   section.appendChild(planets)
-        //   let  planets = document.createElement("h1")
-    }
+        
+        // change
+        
+        
+        
+    };
     
-}
+};
 
 
 render();
 
 
 
+// h1.append(newItem
+//let input = document.querySelector(".text");
+//input.addEventListener("click", function(){
+//  document.body.querySelector(".planets").textContent +=  input +"hello man ";
+// p.innerText = item 
+// let section = document.querySelector("section")
+//   section.appendChild(planets)
+//   let  planets = document.createElement("h1")
+//let h1 = name.querySelector("h1")
+// h1.append(name)
+// h1.innerText = homeworld.item
