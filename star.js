@@ -1,9 +1,11 @@
 
 
+ 
+
 
 async function getSpaceship(url){
-    let response = await fetch("https://swapi.co/api/starships/12/")
-    let body = await response.json(url)
+    let response = await fetch("https://swapi.co/api/starships/12/") // det du vill ha 
+    let body = await response.json(url) // hämntar alla data från get data. 
     return body.model
 }
 
@@ -33,6 +35,8 @@ async function render(){
     // call and wait for getData()
     let list = await getData()
     
+    
+    
     // store the <ul> tag
     let ul = document.querySelector("ul")
     
@@ -47,6 +51,7 @@ async function render(){
         
         newItem.classList.remove("species")
         newItem.setAttribute("planet",item.homeworld) // länken som vissas url på sidan
+       
         
         newItem.addEventListener("click",async function(){
             document.body.querySelector(".text").innerText = item.homeworld;
@@ -54,6 +59,9 @@ async function render(){
             document.body.querySelector(".h1").innerText = list1 ;
             let list2 = await getSpaceship(item.starships)
             document.body.querySelector(".h2").innerText = list2 ;
+           
+           
+           
             
             
             

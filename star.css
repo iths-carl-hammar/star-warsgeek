@@ -4,10 +4,16 @@
 }
 
 .box{
+    display: flex;
+    margin:auto;
     height: 500px;
     width: 500px;
     background-color: rgb(226, 217, 217);
     border-radius: 2px solid black ;
+    -webkit-box-shadow: -14px -5px 5px 0px rgba(20,20,20,0.34);
+    -moz-box-shadow: -14px -5px 5px 0px rgba(20,20,20,0.34);
+    box-shadow: -14px -5px 5px 0px rgba(20,20,20,0.34);
+    
 }
 .h1{
     color: darkorange;
