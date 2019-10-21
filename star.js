@@ -1,16 +1,8 @@
 
-async function getPictures(){
-    let  bild = 'https://source.unsplash.com/random/api'
-    let response = await fetch(bild)
-    let body = await response.json(bild)
-   return body.user
-    
-}
-let post =  await getPictures()
 
 
 async function getSpaceship(url){
-    let response = await fetch(url)
+    let response = await fetch("https://swapi.co/api/starships/12/")
     let body = await response.json(url)
     return body.model
 }
@@ -23,9 +15,9 @@ async function getPlanet(url){
 }
 
 
-async function getData(){
+async function getData(url){
     // fetch and wait for to finish
-    let  url = 'https://swapi.co/api/people/'
+    url = 'https://swapi.co/api/people/'
     let response = await fetch( url )
     
     
@@ -61,7 +53,7 @@ async function render(){
             let list1 = await getPlanet( item.homeworld)
             document.body.querySelector(".h1").innerText = list1 ;
             let list2 = await getSpaceship(item.starships)
-            document.body.querySelector(".h2").innerText = list2  + "  . Ready to shoot you down with my space ship Luke even though you are my son. just kidding ";
+            document.body.querySelector(".h2").innerText = list2 ;
             
             
             
@@ -75,7 +67,7 @@ async function render(){
         
         
         
-    };
+    }
     
 };
 
